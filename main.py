@@ -10,6 +10,8 @@ def main():
     cell2.draw(150, 50, 250, 150)
     cell3.draw(250, 50, 350, 150)
     cell4.draw(350, 50, 450, 150)
+    cell1.draw_move(cell2)
+    cell2.draw_move(cell3, True)
     gamewindow.wait_for_close()
 
 
