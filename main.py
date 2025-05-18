@@ -2,16 +2,13 @@ import window
 
 def main():
     gamewindow = window.Window(800, 600)
-    cell1 = window.Cell(gamewindow)
-    cell2 = window.Cell(gamewindow)
-    cell3 = window.Cell(gamewindow)
-    cell4 = window.Cell(gamewindow)
-    cell1.draw(50, 50, 150, 150)
-    cell2.draw(150, 50, 250, 150)
-    cell3.draw(250, 50, 350, 150)
-    cell4.draw(350, 50, 450, 150)
-    cell1.draw_move(cell2)
-    cell2.draw_move(cell3, True)
+    x1 = 100
+    y1 = 100
+    num_rows = 40
+    num_cols = 40
+    cell_size_x = 40
+    cell_size_y = 40
+    maze = window.Maze(x1, y1, num_rows, num_cols, cell_size_x, cell_size_y, gamewindow)
     gamewindow.wait_for_close()
 
 
