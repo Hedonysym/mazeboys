@@ -10,6 +10,7 @@ def main():
     cell_size_x = 40
     cell_size_y = 40
     gamemaze = maze.Maze(x1, y1, num_rows, num_cols, cell_size_x, cell_size_y, gamewindow)
+    gamemaze.solve()
     gamewindow.wait_for_close()
 
 

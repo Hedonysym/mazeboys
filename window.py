@@ -55,31 +55,31 @@ class Cell:
         self.__y1 = -1
         self.__x2 = -1
         self.__y2 = -1
-        self.__win = win
+        self.win = win
 
     def draw(self, x1, y1, x2, y2):
         self.__x1 = x1
         self.__y1 = y1
         self.__x2 = x2
         self.__y2 = y2
-        if self.__win is None:
+        if self.win is None:
             return
         if self.has_left_wall:
-            self.__win.draw_line(Line(Point(self.__x1, self.__y1), Point(self.__x1, self.__y2)), "black")
+            self.win.draw_line(Line(Point(self.__x1, self.__y1), Point(self.__x1, self.__y2)), "black")
         else:
-            self.__win.draw_line(Line(Point(self.__x1, self.__y1), Point(self.__x1, self.__y2)), "white")
+            self.win.draw_line(Line(Point(self.__x1, self.__y1), Point(self.__x1, self.__y2)), "white")
         if self.has_right_wall:
-            self.__win.draw_line(Line(Point(self.__x2, self.__y1), Point(self.__x2, self.__y2)), "black")
+            self.win.draw_line(Line(Point(self.__x2, self.__y1), Point(self.__x2, self.__y2)), "black")
         else:
-            self.__win.draw_line(Line(Point(self.__x2, self.__y1), Point(self.__x2, self.__y2)), "white")
+            self.win.draw_line(Line(Point(self.__x2, self.__y1), Point(self.__x2, self.__y2)), "white")
         if self.has_top_wall:
-            self.__win.draw_line(Line(Point(self.__x1, self.__y1), Point(self.__x2, self.__y1)), "black")
+            self.win.draw_line(Line(Point(self.__x1, self.__y1), Point(self.__x2, self.__y1)), "black")
         else:
-            self.__win.draw_line(Line(Point(self.__x1, self.__y1), Point(self.__x2, self.__y1)), "white")
+            self.win.draw_line(Line(Point(self.__x1, self.__y1), Point(self.__x2, self.__y1)), "white")
         if self.has_bottom_wall:
-            self.__win.draw_line(Line(Point(self.__x1, self.__y2), Point(self.__x2, self.__y2)), "black")
+            self.win.draw_line(Line(Point(self.__x1, self.__y2), Point(self.__x2, self.__y2)), "black")
         else:
-            self.__win.draw_line(Line(Point(self.__x1, self.__y2), Point(self.__x2, self.__y2)), "white")
+            self.win.draw_line(Line(Point(self.__x1, self.__y2), Point(self.__x2, self.__y2)), "white")
 
     def center(self):
         return Point((self.__x1 + self.__x2) // 2, (self.__y1 + self.__y2) // 2)
@@ -88,6 +88,6 @@ class Cell:
         if self.win is None:
             return
         if undo:
-            self.__win.draw_line(Line(self.center(), to_cell.center()), "gray")
+            self.win.draw_line(Line(self.center(), to_cell.center()), "gray")
         else:
-            self.__win.draw_line(Line(self.center(), to_cell.center()), "red")
+            self.win.draw_line(Line(self.center(), to_cell.center()), "red")
